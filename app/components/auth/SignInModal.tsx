@@ -3,10 +3,10 @@
 import React from 'react';
 import Button from '../form/Button';
 import { useForm } from 'react-hook-form';
-import Modal from '../common/Modal/Modal';
+import Modal from '../common/modal/Modal';
 import InputError from '../form/InputError';
 import { SignInForm } from '@/app/interfaces/auth';
-import ModalTitle from '../common/Modal/ModalTitle';
+import ModalTitle from '../common/modal/ModalTitle';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputGroup from '../form/InputGroup/InputGroup';
 import { TextField } from '../form/TextField/TextField';
@@ -45,7 +45,7 @@ const SignInModal: React.FC<SignInModalProps> = ({ show, onClose }) => {
               hasError={!!errors.email?.message}
               {...register('email')}
             />
-            <InputError error={errors.email?.message}/>
+            <InputError error={errors.email?.message} />
           </InputGroup>
           <InputGroup label="Password" htmlFor="password">
             <PasswordField
@@ -55,10 +55,11 @@ const SignInModal: React.FC<SignInModalProps> = ({ show, onClose }) => {
               placeholder="hFg4093%67%m"
               {...register('password')}
             />
-            <InputError error={errors.password?.message}/>
+            <InputError error={errors.password?.message} />
           </InputGroup>
         </div>
         <Button
+          style="dark"
           type="submit"
           className="font-bold w-full mt-6 bg-secundary"
         >

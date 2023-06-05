@@ -1,0 +1,19 @@
+.profile {
+  @apply flex gap-2 items-center mb-2;
+}
+
+.profile__image {
+  @apply w-[30px] h-[30px] rounded-full object-cover;
+}
+
+.profile__names {
+  @apply text-[12px] mt-[5px];
+}
+
+.profile__username {
+  @apply not-italic text-black;
+}
+
+.profile__profesion {
+  @apply text-[#B8B8B8] translate-y-[-5px];
+}

@@ -3,13 +3,17 @@
 import Image from 'next/image';
 import React from 'react';
 
-const Logo = () => {
+interface LogoProps {
+  isDark: boolean;
+}
+
+const Logo: React.FC<LogoProps> = ({ isDark }) => {
   return (
     <a href="/" className="cursor-pointer">
       <img
         className="w-32"
         alt="Gretalks"
-        src="/images/logo.svg"    
+        src={isDark ? "/images/logo-dark.svg" : "/images/logo.svg"}
       />
     </a>
   );

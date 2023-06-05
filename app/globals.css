@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary: #87a5ff;
+  --primary: #B711F1;
   --secundary: #F49223;
   
   --black: #1E1E1E;
@@ -15,5 +15,4 @@
   --black-opacity-30: #C8C8C8;
   --black-opacity-10: #e8e8e8;
 
-  --primary-opacity-70: #f7ae5a;
 }

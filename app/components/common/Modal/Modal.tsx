@@ -1,5 +1,6 @@
 'use client'
 
+import { createPortal } from 'react-dom';
 import React, { ReactNode, useEffect, useRef } from 'react';
 
 interface ModalProps {
@@ -29,23 +30,26 @@ const Modal: React.FC<ModalProps> = ({ children, show, onClose }) => {
     }
 
     return () => document.removeEventListener('click', clickOutSite);
-  }, [show])
+  })
 
   return (
     show ? (
-      <div
-        className="fixed w-screen h-screen backdrop-blur-sm bg-gray-900/[0.8] z-50 flex items-center justify-center"
-      >
+      createPortal(
         <div
-          ref={modalRef}
-          className="bg-white p-6 shadow-md rounded-md relative w-[500px] h-auto z-[60] px-16 py-14"
+          className="fixed top-0 left-0 w-screen h-screen backdrop-blur-sm bg-gray-900/[0.8] z-50 flex items-center justify-center"
         >
-          <button onClick={onClose}>
-            <img src="images/icons/xmark-solid.svg" className="absolute top-3 right-3 w-5 h-5" />
-          </button>
-          {children}
-        </div>
-      </div>
+          <div
+            ref={modalRef}
+            className="bg-white p-6 shadow-md rounded-md relative w-[500px] h-auto z-[60] px-16 py-14"
+          >
+            <button onClick={onClose}>
+              <img src="images/icons/xmark-solid.svg" className="absolute top-3 right-3 w-5 h-5" />
+            </button>
+            {children}
+          </div>
+        </div>,
+        document.querySelector('main') || document.body,
+      )
     ) : null
   );
 }
