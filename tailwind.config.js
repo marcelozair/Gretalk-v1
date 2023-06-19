@@ -30,9 +30,8 @@ module.exports = {
         'black-opacity-30': 'var(--black-opacity-30)',
         'black-opacity-10': 'var(--black-opacity-10)',
 
-        'line': '#D7D7D7',
+        'app-border': 'var(--app-border)',
         'error': 'var(--error)',
-
         'letter-title': 'var(--black)'
       }
     },

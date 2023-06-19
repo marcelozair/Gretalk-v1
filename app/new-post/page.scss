@@ -1,0 +1,16 @@
+.input-title {
+  @apply w-full font-bold text-3xl outline-none h-12 min-h-[48px] mb-12;
+}
+
+.input-title::-webkit-scrollbar {
+  display: none;
+}
+
+.ck-editor__editable_inline {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.ck-toolbar_grouping {
+  border: none !important;
+}

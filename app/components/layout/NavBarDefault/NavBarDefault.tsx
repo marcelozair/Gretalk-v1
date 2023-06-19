@@ -1,10 +1,9 @@
 'use client'
 
 import Logo from '../Logo';
-import React, { useEffect, useRef, useState } from 'react';
-import { usePathname } from 'next/navigation'
+import React, { useState } from 'react';
 
-import './NavBar.css';
+import './NavBarDefault.scss';
 import SignUpModal from '../../auth/SignUpModal';
 import Button from '../../form/Button';
 import SignInModal from '../../auth/SignInModal';
@@ -21,29 +20,9 @@ const links = [
   },
 ]
 
-function NavBar() {
+function NavBarDefault() {
   const [showSignUpModal, setShowSignUpModal] = useState(false);
   const [showSignInModal, setShowSignInModal] = useState(false);
-  const [stickyHeader, setStickyHeader] = useState(false);
-  const pathname = usePathname();
-
-  const headerRef = useRef<HTMLElement>(null);
-
-  const scrollEvent = () => {
-    const isActive = headerRef?.current?.classList.contains('active-header');
-    if (window.scrollY > 100 && !isActive) {
-      headerRef?.current?.classList.add('active-header');
-      setStickyHeader(true);
-    } else if (window.scrollY < 100 && isActive) {
-      headerRef?.current?.classList.remove('active-header');
-      setStickyHeader(false);
-    }
-  };
-
-  useEffect(() => {
-    document.addEventListener('scroll', scrollEvent);
-    return () => document.removeEventListener('scroll', scrollEvent);
-  }, []);
 
   return (
     <div>
@@ -56,26 +35,26 @@ function NavBar() {
         onClose={() => setShowSignInModal(false)}
         show={showSignInModal}
       />
-      <header ref={headerRef} className="header">
+      <header className="header-default">
         <Container>
           <div className="flex items-center justify-between">
-            <Logo isDark={stickyHeader} />
+            <Logo isDark={true} />
             <nav className="flex items-center gap-5">
               {links.map(({ name, href }) => {
                 return (
-                  <a href={href} key={name} className={stickyHeader ? 'text-black' : 'text-white'}>
+                  <a href={href} key={name} className="text-black">
                     {name}
                   </a>
                 )
               })}
               <button
                 onClick={() => setShowSignInModal(true)}
-                className={stickyHeader ? 'text-black' : 'text-white'}
+                className="text-black"
               >
                 Sign in
               </button>
               <Button
-                style={stickyHeader ? 'dark' : 'normal'}
+                style="dark"
                 onClick={() => setShowSignUpModal(true)}
               >
                 Get started
@@ -88,4 +67,4 @@ function NavBar() {
   );
 }
 
-export default NavBar;
+export default NavBarDefault;

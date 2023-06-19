@@ -14,6 +14,7 @@ import { Post } from './interfaces/post'
 import Button from './components/form/Button'
 import SectionTitle from './components/common/content/SectionTitle'
 import Link from 'next/link'
+import NavBar from './components/layout/NavBar/NavBar'
 
 const font = Lora({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function Home() {
 
   return (
     <main>
+      <NavBar />
       <SignInModal
         onClose={() => setShowSignInModal(false)}
         show={showSignInModal}

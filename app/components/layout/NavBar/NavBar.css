@@ -3,5 +3,5 @@
 }
 
 .active-header {
-  @apply bg-white border-b-[1px] border-b-line;
+  @apply bg-white border-b-[1px] border-b-app-border;
 }
