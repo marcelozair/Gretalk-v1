@@ -3,15 +3,15 @@
 import React from 'react';
 import Button from '../form/Button';
 import { useForm } from 'react-hook-form';
-import Modal from '../common/modal/Modal';
 import InputError from '../form/InputError';
 import { SignInForm } from '@/app/interfaces/auth';
-import ModalTitle from '../common/modal/ModalTitle';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputGroup from '../form/InputGroup/InputGroup';
 import { TextField } from '../form/TextField/TextField';
 import { SignInSchema } from '@/app/schema/auth/SignInSchema';
 import PasswordField from '../form/PasswordField/PasswordField';
+import { Modal } from '../common/modal/Modal';
+import { ModalTitle } from '../common/modal/ModalTitle';
 
 interface SignInModalProps {
   show: boolean;

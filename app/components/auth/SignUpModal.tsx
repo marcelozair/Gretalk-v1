@@ -1,13 +1,13 @@
 import React from 'react';
 import Button from '../form/Button';
-import Modal from '../common/modal/Modal';
 import { useForm } from 'react-hook-form';
 import InputError from '../form/InputError';
+import { Modal } from '../common/modal/Modal';
 import { SignUpForm } from '@/app/interfaces/auth';
-import ModalTitle from '../common/modal/ModalTitle';
 import { yupResolver } from '@hookform/resolvers/yup';
 import InputGroup from '../form/InputGroup/InputGroup';
 import { TextField } from '../form/TextField/TextField';
+import { ModalTitle } from '../common/modal/ModalTitle';
 import { SignUpSchema } from '@/app/schema/auth/SignUpSchema';
 import PasswordField from '../form/PasswordField/PasswordField';
 

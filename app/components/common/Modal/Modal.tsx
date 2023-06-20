@@ -9,7 +9,7 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const Modal: React.FC<ModalProps> = ({ children, show, onClose }) => {
+export const Modal: React.FC<ModalProps> = ({ children, show, onClose }) => {
 
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -53,5 +53,3 @@ const Modal: React.FC<ModalProps> = ({ children, show, onClose }) => {
     ) : null
   );
 }
-
-export default Modal;

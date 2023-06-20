@@ -9,12 +9,10 @@ interface ModalTitleProps {
   children: React.ReactNode;
 }
 
-const ModalTitle: React.FC<ModalTitleProps> = ({ children }) => {
+export const ModalTitle: React.FC<ModalTitleProps> = ({ children }) => {
   return (
     <div className="mb-8">
       <h3 className={"text-xl font-bold text-black text-center " + Font.className}>{children}</h3>
     </div>
   );
 }
-
-export default ModalTitle;
